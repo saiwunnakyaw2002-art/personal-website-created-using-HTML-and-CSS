@@ -70,13 +70,11 @@
             line-height: 1.6;
             animation: fadeIn 0.5s ease;
         }
-        .spider-img {
-            width: 100%;
-            max-height: 250px;
-            object-fit: contain;
-            border-radius: 15px;
-            margin-top: 15px;
-            margin-bottom: 15px;
+        .spider-icon {
+            width: 150px;
+            height: 150px;
+            margin: 15px auto;
+            display: block;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -104,16 +102,29 @@
             const resultBox = document.getElementById('resultBox');
             resultBox.style.display = 'block';
 
+            // Spider-Man SVG Graphic Code
+            const spidermanSVG = `
+                <svg class="spider-icon" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="#e53935"/>
+                    <path d="M50 5 L50 95 M5 50 L95 50 M18 18 L82 82 M18 82 L82 18" stroke="#212121" stroke-width="1.5" opacity="0.6"/>
+                    <path d="M50 25 Q35 35 50 45 Q65 35 50 25 Z" fill="none" stroke="#212121" stroke-width="1"/>
+                    <path d="M50 15 Q25 35 50 55 Q75 35 50 15 Z" fill="none" stroke="#212121" stroke-width="1"/>
+                    <!-- Eyes -->
+                    <polygon points="20,35 42,48 38,28" fill="#ffffff" stroke="#212121" stroke-width="3"/>
+                    <polygon points="80,35 58,48 62,28" fill="#ffffff" stroke="#212121" stroke-width="3"/>
+                </svg>
+            `;
+
             if (answer === 'yes') {
                 resultBox.innerHTML = `
-                    <img src="https://i.imgur.com/3N8b5fQ.gif" alt="Spiderman Begging" class="spider-img">
+                    ${spidermanSVG}
                     <p>စိတ်မဆိုးပါနဲ့ Hpoo Hpoo ကလည်း...</p>
                     <br>
                     <p><strong>Messenger မှာ စာပြန်ပါဦးနော်! ❤️🕷️</strong></p>
                 `;
             } else if (answer === 'no') {
                 resultBox.innerHTML = `
-                    <img src="https://i.imgur.com/W2d5mD8.gif" alt="Spiderman Sad" class="spider-img">
+                    ${spidermanSVG}
                     <p>စိတ်မဆိုးရင်လည်း Messenger မှာ စာပြန်ပါဦး...</p>
                     <br>
                     <p><strong>Hpoo Hpoo ကလည်း နော်... 🥰🕸️</strong></p>
