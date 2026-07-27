@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Hpoo Hpoo 💕</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #ffe6e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #ff4d6d;
+            font-size: 22px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .btn-yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .btn-yes:hover {
+            background-color: #ff758f;
+        }
+        .btn-no {
+            background-color: #c0c0c0;
+            color: #333;
+        }
+        .btn-no:hover {
+            background-color: #a8a8a8;
+        }
+        .result-box {
+            display: none;
+            font-size: 18px;
+            color: #590d22;
+            line-height: 1.6;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- ပထမဆုံး မေးမယ့် မေးခွန်း -->
+        <div id="questionBox">
+            <h1>Hpoo Hpoo စိတ်ဆိုးနေတာလား? 🥺</h1>
+            <div class="btn-group">
+                <button class="btn-yes" onclick="showResult('yes')">Yes</button>
+                <button class="btn-no" onclick="showResult('no')">No</button>
+            </div>
+        </div>
+
+        <!-- အဖြေပြမယ့် နေရာ -->
+        <div id="resultBox" class="result-box"></div>
+    </div>
+
+    <script>
+        function showResult(answer) {
+            document.getElementById('questionBox').style.display = 'none';
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+
+            if (answer === 'yes') {
+                resultBox.innerHTML = `
+                    <p>စိတ်မဆိုးပါနဲ့ Hpoo Hpoo ကလည်း... 🥺</p>
+                    <br>
+                    <p>မုန်းဝယ်ကျွေးမယ်လေ နော် 🍫🍬</p>
+                    <br>
+                    <p><strong>Messenger မှာ စာပြန်ပါဦးနော်! ❤️</strong></p>
+                `;
+            } else if (answer === 'no') {
+                resultBox.innerHTML = `
+                    <p>စိတ်မဆိုးရင်လည်း မျက်နှာလေး သာသာယာယာ ထားပါဦး 💖</p>
+                    <br>
+                    <p><strong>Messenger မှာ စာပြန်ပါဦးနော်! 🥰</strong></p>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
