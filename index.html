@@ -71,8 +71,9 @@
             animation: fadeIn 0.5s ease;
         }
         .spider-img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
             border-radius: 15px;
             margin-top: 15px;
             margin-bottom: 15px;
@@ -86,7 +87,6 @@
 <body>
 
     <div class="card">
-        <!-- ပထမဆုံး မေးမယ့် မေးခွန်း -->
         <div id="questionBox">
             <h1>Hpoo Hpoo စိတ်ဆိုးနေတာလား? 🥺</h1>
             <div class="btn-group">
@@ -95,7 +95,6 @@
             </div>
         </div>
 
-        <!-- အဖြေပြမယ့် နေရာ -->
         <div id="resultBox" class="result-box"></div>
     </div>
 
@@ -107,14 +106,16 @@
 
             if (answer === 'yes') {
                 resultBox.innerHTML = `
-                    <img src="https://media.giphy.com/media/l3fZLM4n3T3L9s34W/giphy.gif" alt="Spiderman Begging" class="spider-img">
+                    <img src="https://i.gifer.com/7I2t.gif" alt="Spiderman Begging" class="spider-img">
                     <p>စိတ်မဆိုးပါနဲ့ Hpoo Hpoo ကလည်း...</p>
+                    <br>
                     <p><strong>Messenger မှာ စာပြန်ပါဦးနော်! ❤️🕷️</strong></p>
                 `;
             } else if (answer === 'no') {
                 resultBox.innerHTML = `
-                    <img src="https://media.giphy.com/media/l4pTj3cR3u4yU4rLq/giphy.gif" alt="Spiderman Miss You" class="spider-img">
+                    <img src="https://i.gifer.com/fetch/w300-preview/a9/a93325608d0a83e0202888258b6bd02a.gif" alt="Spiderman Sad" class="spider-img">
                     <p>စိတ်မဆိုးရင်လည်း Messenger မှာ စာပြန်ပါဦး...</p>
+                    <br>
                     <p><strong>Hpoo Hpoo ကလည်း နော်... 🥰🕸️</strong></p>
                 `;
             }
